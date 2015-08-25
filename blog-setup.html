@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>我的第一个博客！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Ben">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="/theme/css/bootstrap.dark.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
+        <link href="/theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
+
+    <link href="/" type="application/atom+xml" rel="alternate" title="看不见AC的世界 ATOM Feed" />
+    <!-- Using MathJax, with the delimiters $ -->
+    <!-- Conflict with pygments for the .mo and .mi -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      "HTML-CSS": {
+      styles: {
+      ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+      },
+      tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']],processEscapes: true}
+      });
+    </script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  </head>
+  
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">看不见AC的世界 </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                <li><a href="/pages/about-me.html">About Me</a></li>
+                          <li class="divider-vertical"></li>
+                  <li class="active">
+                    <a href="/category/computer.html">
+						<i class="icon-folder-open icon-large"></i>Computer
+					</a>
+                  </li>
+                  <li >
+                    <a href="/category/life.html">
+						<i class="icon-folder-open icon-large"></i>Life
+					</a>
+                  </li>
+                  <li >
+                    <a href="/category/tech.html">
+						<i class="icon-folder-open icon-large"></i>tech
+					</a>
+                  </li>
+
+                          <ul class="nav pull-right">
+                                <li><a href="/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to 我的第一个博客！">
+                                        我的第一个博客！
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2015-08-25T14:42:00+08:00">
+        <i class="icon-calendar"></i>Tue 25 August 2015
+</abbr>
+<span class="label">By</span>
+<a href="/author/ben.html"><i class="icon-user"></i>Ben</a>
+<span class="label">Category</span>
+<a href="/category/computer.html"><i class="icon-folder-open"></i>Computer</a>.
+
+
+<span class="label">Tags</span>
+	<a href="/tag/blog.html"><i class="icon-tag"></i>blog</a>
+	<a href="/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
+	<a href="/tag/markdown.html"><i class="icon-tag"></i>markdown</a>
+</footer><!-- /.post-info -->                </div>
+                <h2>Blog Setup</h2>
+<hr />
+<p>之前和同学一起学unity3D, 在Iteye上面写博客写了几篇就坚持不下来了。。。这几天突然想着要搭一个自己的博客。各种google，百度终于在框架搭好了，记录一下(中间ubuntu, windows两个系统各种折腾，终于都打好了一 一+)</p>
+<hr />
+<h2>Linux下的搭建</h2>
+<hr />
+<p>选用的工具是python + pelican + github 搭建一个静态博客， 参考网站很多，主要是这个<a href="http://www.cnblogs.com/ballwql/p/pelican.html">GITHUB个人博客搭建-Pelican 在Windows环境下的安装及配置</a>以及<a href="http://www.cnblogs.com/CommonQ/p/4062347.html">"用Pelican和Github Pages在Linux上搭建个人博客"</a>。</p>
+<p>首先你得有个github帐号， 官网申请完之后，建立一个username.github.io的版本库，然后把你的博客放进这个库中，然后就可以直接登录username.github.io的网址看见你的博客了</p>
+<p>然后选用的框架是pelican, 看到说是基于python的我就直接选了这个了，反正是第一次。。
+先把这个pip的安装程序弄下来<a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a></p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span>   <span class="err">#安装</span><span class="n">Python</span>
+<span class="n">python</span> <span class="n">get</span><span class="o">-</span><span class="n">pip</span><span class="p">.</span><span class="n">py</span>             <span class="err">#安装</span><span class="n">pip</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span>           <span class="err">#安装</span><span class="n">pelican</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">markdown</span>          <span class="err">#安装</span><span class="n">markdown</span>
+<span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>            <span class="err">#建立</span><span class="n">blog</span><span class="err">的框架</span>
+</pre></div>
+
+
+<p>这是整个文件夹的结构</p>
+<div class="highlight"><pre><span class="n">blog</span><span class="o">/</span>
+<span class="o">|--</span><span class="n">content</span> <span class="err">#存储所写的</span><span class="n">blog</span><span class="err">文件目录，</span>
+<span class="o">|</span>   <span class="err">└──（</span><span class="n">blog</span> <span class="n">pages</span><span class="p">)</span> <span class="err">#博客文件，如</span><span class="o">*</span><span class="p">.</span><span class="n">md</span><span class="err">后缀的文件</span>
+<span class="o">|--</span><span class="n">output</span> <span class="err">#执行</span><span class="n">make</span> <span class="n">publish</span><span class="err">之后，会将博客文件转换成相应的</span><span class="n">html</span><span class="err">文件及相应的存储目录</span>
+<span class="o">|</span>   <span class="err">└──</span><span class="p">.</span><span class="n">git</span> <span class="err">#执行</span><span class="n">git</span> <span class="n">init</span><span class="err">之后，产生的远程仓库目录</span>
+<span class="o">|</span>   <span class="err">└──</span><span class="n">author</span> <span class="err">#作者目录，存放</span><span class="n">pelicanconf</span><span class="p">.</span><span class="n">py</span><span class="err">中指定的</span><span class="n">Author</span><span class="err">文件</span>
+<span class="o">|</span>   <span class="err">└──</span><span class="n">category</span> <span class="err">#分类目录，默认目录文件为</span><span class="n">misc</span><span class="err">，在编辑器中指定</span>
+<span class="o">|</span>   <span class="err">└──</span><span class="n">feeds</span> <span class="err">#目录，</span><span class="n">pelicanconf</span><span class="p">.</span><span class="n">py</span><span class="err">中</span><span class="n">FEED_RSS</span><span class="err">指定的</span><span class="n">XML</span><span class="err">文件</span>
+<span class="o">|</span>   <span class="err">└──</span><span class="n">pages</span> <span class="err">#目录，</span><span class="n">pelicanconf</span><span class="p">.</span><span class="n">py</span><span class="err">中</span><span class="n">ARTICLE_URL</span><span class="err">指定格式分类文件</span>
+<span class="o">|</span>   <span class="err">└──</span><span class="n">tag</span> <span class="err">#目录，存放编辑器开头所指定的</span><span class="n">Tag</span>
+<span class="o">|</span>   <span class="err">└──</span><span class="n">theme</span> <span class="err">#目录，存放博客模板文件</span>
+<span class="o">|</span>   <span class="err">└──</span><span class="n">archives</span><span class="p">.</span><span class="n">html</span><span class="p">,</span><span class="n">authors</span><span class="p">.</span><span class="n">html</span><span class="p">,</span><span class="n">categories</span><span class="p">.</span><span class="n">html</span><span class="p">,</span><span class="n">index</span><span class="p">.</span><span class="n">html</span><span class="p">,</span> <span class="n">tags</span><span class="p">.</span><span class="n">html</span>
+<span class="o">|</span><span class="err">——</span><span class="n">pelican</span><span class="o">-</span><span class="n">plugins</span> <span class="err">#目录，</span><span class="n">pelican</span><span class="err">插件</span>
+<span class="o">|</span><span class="err">——</span><span class="n">develop_server</span><span class="p">.</span><span class="n">sh</span> <span class="err">#</span><span class="n">pelican</span><span class="err">简易</span><span class="n">web</span><span class="err">服务器操作文件</span>
+<span class="o">|</span><span class="err">——</span><span class="n">fabfile</span><span class="p">.</span><span class="n">py</span> <span class="err">#</span> <span class="err">与</span><span class="n">make</span><span class="err">类似，可用</span><span class="n">fab</span> <span class="n">publish</span><span class="p">,</span> <span class="n">fab</span> <span class="n">server</span><span class="err">命令</span>
+<span class="o">|</span><span class="err">——</span><span class="n">Makefile</span> <span class="err">#</span><span class="n">make</span> <span class="err">命令文件</span>
+<span class="o">|</span><span class="err">——</span><span class="n">pelicanconf</span><span class="p">.</span><span class="n">py</span> <span class="err">#主要的</span><span class="n">pelican</span><span class="err">配置文件</span>
+<span class="o">|</span><span class="err">——</span><span class="n">publishconf</span><span class="p">.</span><span class="n">py</span> <span class="err">#发布配置文件</span><span class="p">,</span><span class="err">可有可无</span>
+</pre></div>
+
+
+<p>我们主要在content写下博客的内容， 在pelicanconf.py修改配置， makefile修改或添加github发布
+markdown的语法参见<a href="http://www.appinn.com/markdown/#code">Markdown语法简介</a>。 接下来我们先选择一个Pelican主题样式, 从这里<a href="https://github.com/getpelican/pelican-themes">pelican样式</a> fork或者clone下来， 然后选择一个样式，比方说neat, 将其copy至blog目录下， 然后修改pelicanconf.py文件， 添加THEME = "neat"即可采用该样式了。</p>
+<p>为了便于讲output中生成的博客直接发布到github中， 修改Makefile文件如下:</p>
+<div class="highlight"><pre><span class="n">TARGETDIR</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="n">BASEDIR</span><span class="p">)</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">mihawk2010</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span>
+<span class="nl">publish:</span>
+    <span class="err">$</span><span class="p">(</span><span class="n">PELICAN</span><span class="p">)</span> <span class="err">$</span><span class="p">(</span><span class="n">INPUTDIR</span><span class="p">)</span> <span class="o">-</span><span class="n">o</span> <span class="err">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span> <span class="o">-</span><span class="n">s</span> <span class="err">$</span><span class="p">(</span><span class="n">CONFFILE</span><span class="p">)</span> <span class="err">$</span><span class="p">(</span><span class="n">PELICANOPTS</span><span class="p">)</span> 
+<span class="nl">github:</span> <span class="n">publish</span>
+    <span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">u</span> <span class="err">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span><span class="o">/</span><span class="p">.</span> <span class="err">$</span><span class="p">(</span><span class="n">TARGETDIR</span><span class="p">)</span><span class="o">/</span>
+    <span class="n">cd</span> <span class="err">$</span><span class="p">(</span><span class="n">TARGETDIR</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">git</span> <span class="n">add</span> <span class="o">--</span><span class="n">all</span>
+    <span class="n">cd</span> <span class="err">$</span><span class="p">(</span><span class="n">TARGETDIR</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="err">&#39;</span><span class="n">commit</span><span class="err">&#39;</span>
+    <span class="n">cd</span> <span class="err">$</span><span class="p">(</span><span class="n">TARGETDIR</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></div>
+
+
+<p>我的做法比较怪， 因为我直接按照他们的方法改git会报错， 可能我有些设置不对把。这里我就自己慢慢测试成功是这个样子。 在这之前还要配置你的git身份，并把username.github.io远程仓库添加至本地，然后我们就可以利用</p>
+<div class="highlight"><pre><span class="n">make</span> <span class="n">github</span>
+</pre></div>
+
+
+<p>直接发布博客了。</p>
+<hr />
+<h2>Windows下的配置</h2>
+<hr />
+<p>一开始我准备直接使用windows的， 类似的安装好python, pip, pelican, <a href="ftp://ftp.equation.com/make/64/make.exe">make</a>, 并且也可以成功发布。 但是我想使用make devserver指令调试，这样可以实时的看到我的博客的变化， 这点在windows下做不到(不过我没试过fab)。 所以我就决定用Cygwin了。</p>
+<p>安装Cygwin的时候， 可以要勾选python, git, make安装， 不然打开什么都有。 然后类似于Linux下的过程一步一步来就好了。 我遇到的折腾的问题就是路径不对， 因为我的Windows里面装好了python, pip, pelican， 然后在Cygwin里面执行这些指令就会调用windows下的这些程序， 但是这些程序不认Cygwin的路径。。搞了半天， 我把Windows下默认的python的环境变量都删了， 然后一步一步安装就ok了。</p>
+<p>在Windows下写markdown用的是markdownPad2， 用起来很方便， 比linux下的retext好用。不过刚才手贱点了更新， 破解的就没了。。。 之后等别的功能也一起装好了，再来写吧(┬＿┬)</p>
+                </div><!-- /.entry-content -->
+        </article>
+</section>
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><a href="http://getpelican.com/"><i class="icon-external-link"></i>Pelican</a></li>
+    <li><a href="http://python.org/"><i class="icon-external-link"></i>Python.org</a></li>
+    <li><a href="http://jinja.pocoo.org/"><i class="icon-external-link"></i>Jinja2</a></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+<li><a href="/" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+    <li><a href="http://weibo.com/mihawk2010"><i class="icon-微博-sign icon-large"></i>微博</a></li>
+    <li><a href="http://www.zhihu.com/people/zhang-benxuan"><i class="icon-知乎-sign icon-large"></i>知乎</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="/category/computer.html">
+    <i class="icon-folder-open icon-large"></i>Computer
+</a>
+</li>
+<li>
+<a href="/category/life.html">
+    <i class="icon-folder-open icon-large"></i>Life
+</a>
+</li>
+<li>
+<a href="/category/tech.html">
+    <i class="icon-folder-open icon-large"></i>tech
+</a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is based on <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
+                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/theme/js/jquery-1.7.2.min.js"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

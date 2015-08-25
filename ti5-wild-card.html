@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ti5 外卡赛程序模拟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Ben">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="/theme/css/bootstrap.dark.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
+        <link href="/theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
+
+    <link href="/" type="application/atom+xml" rel="alternate" title="看不见AC的世界 ATOM Feed" />
+    <!-- Using MathJax, with the delimiters $ -->
+    <!-- Conflict with pygments for the .mo and .mi -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      "HTML-CSS": {
+      styles: {
+      ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+      },
+      tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']],processEscapes: true}
+      });
+    </script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  </head>
+  
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">看不见AC的世界 </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                <li><a href="/pages/about-me.html">About Me</a></li>
+                          <li class="divider-vertical"></li>
+                  <li >
+                    <a href="/category/computer.html">
+						<i class="icon-folder-open icon-large"></i>Computer
+					</a>
+                  </li>
+                  <li class="active">
+                    <a href="/category/life.html">
+						<i class="icon-folder-open icon-large"></i>Life
+					</a>
+                  </li>
+                  <li >
+                    <a href="/category/tech.html">
+						<i class="icon-folder-open icon-large"></i>tech
+					</a>
+                  </li>
+
+                          <ul class="nav pull-right">
+                                <li><a href="/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to Ti5 外卡赛程序模拟">
+                                        Ti5 外卡赛程序模拟
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2015-07-26T00:00:00+08:00">
+        <i class="icon-calendar"></i>Sun 26 July 2015
+</abbr>
+<span class="label">By</span>
+<a href="/author/ben.html"><i class="icon-user"></i>Ben</a>
+<span class="label">Category</span>
+<a href="/category/life.html"><i class="icon-folder-open"></i>Life</a>.
+
+
+<span class="label">Tags</span>
+	<a href="/tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="/tag/dota2.html"><i class="icon-tag"></i>dota2</a>
+</footer><!-- /.post-info -->                </div>
+                <h2>Ti5 外卡赛</h2>
+<hr />
+<p>前天一时兴起， 想用计算机模拟Ti5外卡赛和正赛来看看最后的结果如何，这样就能完成「 小金本 」的预测~ 现在记录一下一些有趣的东西。</p>
+<p>外卡赛4只队伍CDEC, Vega, MVP 和 Archon, 问题的关键是如何模拟一场比赛的胜负。我最初的想法是查下有没有人研究过每支战队的MMR值与胜率之间的关系， 但是没有找到类似的结论。退而求其次， 我决定用MMR值作为一个基准，然后利用近3个月来战队之间相互战绩进行调整， 具体方案如下：</p>
+<blockquote>
+<p><a href="http://www.joindota.com/en/edb/teams">joindota</a>  使用points值作为战队排名的依据， 同时点
+开每支战队，可以查看近期的对战情况， 打开每场比赛还能看到双方交手胜负，比如Secret 的points 是34779， EG的points是33485， 那么Secret 对 EG的基础胜率就是$\frac{2}{3}$， EG对Secret的胜率则与之相反。 </p>
+<p>然后在<a href="http://www.joindota.com/en/matches/162345-evil-geniuses-vs-teamsecret">joindota_match</a> 这里记录了双方相互战绩为Secret为70%胜率。 </p>
+<p>那么我们最终的胜率定为 winrate["Secret"]["EG"] = alpha * 实际胜率 + (1 - alpha) * 基础胜率。</p>
+<p>这里alpha由自己确定， 我设为0.65。 如果alpha&gt; 0.5 则实际战绩比重更大， 反之基础胜率比重更大。</p>
+</blockquote>
+<p>当然我具体做的时候并不精确， 其一我没有找到一个网站能够提供给我战队之间近3个月的相互战绩。 在dotamax我能查到各个战队的比赛情况， 但是我只能手工统计，这样太麻烦， 我就采用了joindata里面现成的数据， 但不知道这些交手战绩是什么时候的~。 其二是有些队伍之间比赛次数很少， 相互战绩并不能具体体现双方实力，但我还是按同样的公式进行加权平均。</p>
+<p>对于外卡赛4只队伍，确实找不到相互战绩。。。所以直接使用points作为最终的胜率，当然这很不精确， 我就试试看有什么结果~4只战队的points如下：</p>
+<div class="highlight"><pre>        <span class="n">points</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;CDEC&quot;</span>    <span class="o">:</span> <span class="mi">31462</span><span class="p">,</span>
+                  <span class="s">&quot;Vega&quot;</span>    <span class="o">:</span> <span class="mi">30157</span><span class="p">,</span>
+                  <span class="s">&quot;MVP&quot;</span>     <span class="o">:</span> <span class="mi">29431</span><span class="p">,</span>
+                  <span class="s">&quot;Archon&quot;</span>  <span class="o">:</span> <span class="mi">23050</span> <span class="p">}</span>
+</pre></div>
+
+
+<p>赛制是这样的， CDEC和Vega一组， MVP和Archon一组。 两组胜者在进行一轮比赛，胜者是外卡赛第一。两组败者进行一轮比赛， 败者是外开赛第四， 然后剩下两只队再争夺2，3名，所有比赛均为BO3。 由于我要完成小金本的预测，所以我统计不同的排名次序，看看出现最多的情况是什么，但是结果很出乎我的意料.............我进行了100万次循环， 出现前三多的排名情况竟然是这样的:</p>
+<p><img alt="alt text" src="img/ti5_wild_card_2.png" /></p>
+<p>第一名竟然是points第三的MVP,并且出现较多的两种情况都是MVP居榜首， 我就瞬间凌乱了....正常来说最强的队出现第一的次数应该也是最多的吧，但是模拟的结果完全不是这样的。。。 一时想不通，我就把它放着了，直到今天我和室友说起这事的时候，他给了我一个很好的解释~
+ 首先我们看看具体模拟时候的胜率： </p>
+<div class="highlight"><pre>     <span class="err">&#39;</span><span class="n">MVP</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">MVP</span><span class="err">&#39;</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">CDEC</span><span class="err">&#39;</span><span class="o">:</span> <span class="mf">0.48332320627986797</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Vega</span><span class="err">&#39;</span><span class="o">:</span> <span class="mf">0.4939081694300866</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">Archon</span><span class="err">&#39;</span><span class="o">:</span> <span class="mf">0.5607934300032392</span><span class="p">}</span>
+     <span class="err">这是</span><span class="n">MVP</span><span class="err">对战各只队伍的胜率，可以看到按照我们的假设，其实</span><span class="n">MVP</span><span class="err">，</span> <span class="n">CDEC</span><span class="err">，</span> <span class="n">Vega</span><span class="err">之间实力差距并不大。</span> <span class="err">那么在</span><span class="n">BO3</span><span class="err">中获胜的胜率又有多少呢？</span>
+    <span class="n">MVP</span> <span class="n">vs</span> <span class="n">CDEC</span> <span class="o">:</span>  <span class="mf">0.483</span><span class="o">*</span><span class="mf">0.483</span> <span class="o">+</span> <span class="mf">0.483</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.483</span><span class="p">)</span> <span class="o">*</span><span class="mf">0.483</span> <span class="o">+</span>  <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.483</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.483</span> <span class="o">*</span> <span class="mf">0.483</span> <span class="o">=</span> <span class="mf">0.475</span>
+    <span class="n">MVP</span> <span class="n">vs</span> <span class="n">Vega</span> <span class="o">:</span>  <span class="err">类似的</span><span class="mf">0.491</span>
+    <span class="n">MVP</span>  <span class="n">vs</span> <span class="n">Archon</span><span class="o">:</span>  <span class="mf">0.591</span>
+    <span class="n">CDEC</span> <span class="n">vs</span> <span class="n">Vega</span> <span class="o">:</span> <span class="mf">0.516</span>
+</pre></div>
+
+
+<p>好，再次基础上考虑1000000次模拟，对于CDEC vs Vega的情况， CDEC 有 516000次进入决赛， Vega有484000次进入决赛。 而对于MVP vs Archon， MVP有591000次可能进入决赛。 这里我们发现MVP进入决赛的次数远远大于CDEC, Vega两队。 所以即使MVP在最后决胜的胜率偏低，有49.1% 和 47.5%，但是由于它进入决赛的次数比另外两队多，最终模拟出来的结果MVP得第一的次数就是最多的了...........很简单吧
+好的，总结一下：</p>
+<ul>
+<li>
+<p>这里有违反直觉的地方存在， 胜率高的队伍在大量重复模拟的情况下得第一的次数竟然有可能比胜率偏低的队伍少， 原因是两只强队分入了死亡之组，而另一只稍弱的队伍稳稳地可以进入决赛， 在大量模拟的情况下，稍弱的队伍利用偏多的决赛次数弥补了胜率的不足。</p>
+</li>
+<li>
+<p>我想用大量模拟的结果完成小金本名次预测这个方案本身不对， 因为在单次比赛中，显然按各队胜率从高往低依次为前四的概率显然是最高的，但是在大量统计的情况下却不是这样的。。。建议预测的话就按照实力强弱来排即可，最多也就24种情况，大家分分工总会对的</p>
+</li>
+</ul>
+<p>*其实我也对正赛做了简单的模拟， 模拟次数是500万次， 想知道前六排名， 而出现最多的情况是这些：</p>
+<p><img alt="alt text" src="img/ti5_wild_card_3.png" /></p>
+<p>可以看到每种情况出现的次数是很少的。。总共好像有150多万种可能吧，所以从500w的量级来看这个数量也很少， 但是无一例外的是Secret都是第一。。。。当然这只是模拟的结果，实际情况千变万化~不过第一种情况有4只中国队前六也很不错啦， IG意外的比VG和EG还厉害。</p>
+<ul>
+<li>
+<p>运气真的是实力的一部分，还要看临场发挥啊、适应情况，不过这些都很难说清，期望中国队能取得好成绩了！ </p>
+</li>
+<li>
+<p>这是源代码 <a href="code/dota_wild_card.py">dota2_wild_card.py</a></p>
+</li>
+</ul>
+                </div><!-- /.entry-content -->
+        </article>
+</section>
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><a href="http://getpelican.com/"><i class="icon-external-link"></i>Pelican</a></li>
+    <li><a href="http://python.org/"><i class="icon-external-link"></i>Python.org</a></li>
+    <li><a href="http://jinja.pocoo.org/"><i class="icon-external-link"></i>Jinja2</a></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+<li><a href="/" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+    <li><a href="http://weibo.com/mihawk2010"><i class="icon-微博-sign icon-large"></i>微博</a></li>
+    <li><a href="http://www.zhihu.com/people/zhang-benxuan"><i class="icon-知乎-sign icon-large"></i>知乎</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="/category/computer.html">
+    <i class="icon-folder-open icon-large"></i>Computer
+</a>
+</li>
+<li>
+<a href="/category/life.html">
+    <i class="icon-folder-open icon-large"></i>Life
+</a>
+</li>
+<li>
+<a href="/category/tech.html">
+    <i class="icon-folder-open icon-large"></i>tech
+</a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is based on <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
+                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/theme/js/jquery-1.7.2.min.js"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

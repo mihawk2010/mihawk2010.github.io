@@ -47,9 +47,21 @@
     <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
 
     <link href="/" type="application/atom+xml" rel="alternate" title="看不见AC的世界 ATOM Feed" />
+    <!-- Using MathJax, with the delimiters $ -->
+    <!-- Conflict with pygments for the .mo and .mi -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      "HTML-CSS": {
+      styles: {
+      ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+      },
+      tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']],processEscapes: true}
+      });
+    </script>
 
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
   </head>
-
+  
   <body>
 
     <div class="navbar navbar-fixed-top">
@@ -65,6 +77,11 @@
             <ul class="nav">
                 <li><a href="/pages/about-me.html">About Me</a></li>
                           <li class="divider-vertical"></li>
+                  <li >
+                    <a href="/category/computer.html">
+						<i class="icon-folder-open icon-large"></i>Computer
+					</a>
+                  </li>
                   <li >
                     <a href="/category/life.html">
 						<i class="icon-folder-open icon-large"></i>Life
@@ -91,6 +108,40 @@
       <div class="row">
         <div class="span9" id="content">
         <div class="article">
+                <h1><a href="/blog-setup.html">我的第一个博客！</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2015-08-25T14:42:00+08:00">
+        <i class="icon-calendar"></i>Tue 25 August 2015
+</abbr>
+<span class="label">By</span>
+<a href="/author/ben.html"><i class="icon-user"></i>Ben</a>
+<span class="label">Category</span>
+<a href="/category/computer.html"><i class="icon-folder-open"></i>Computer</a>.
+
+
+<span class="label">Tags</span>
+	<a href="/tag/blog.html"><i class="icon-tag"></i>blog</a>
+	<a href="/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
+	<a href="/tag/markdown.html"><i class="icon-tag"></i>markdown</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><h2>Blog Setup</h2>
+<hr />
+<p>之前和同学一起学unity3D, 在Iteye上面写博客写了几篇就坚持不下来了。。。这几天突然想着要搭一个自己的博客。各种google，百度终于在框架搭好了，记录一下(中间ubuntu, windows两个系统各种折腾，终于都打好了一 一+)</p>
+<hr />
+<h2>Linux下的搭建</h2>
+<hr />
+<p>选用的工具是python + pelican + github 搭建一个静态博客， 参考网站很多，主要是这个<a href="http://www.cnblogs.com/ballwql/p/pelican.html">GITHUB个人博客搭建-Pelican 在Windows环境下的安装及配置</a>以及<a href="http://www.cnblogs.com/CommonQ/p/4062347.html">"用Pelican和Github Pages在Linux上搭建个人博客"</a>。</p>
+<p>首先你得有个github帐号， 官网申请完之后，建立一个username.github.io的版本库，然后把你的博客放进这个库中，然后就可以直接登录username.github.io的网址看见你的博客了</p>
+<p>然后选用的框架是pelican, 看到说是基于python的我就直接选了这个了，反正是第一次。。
+先把这个pip的安装程序弄下来<a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a></p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span>   <span class="err">#安装</span><span class="n">Python</span>
+<span class="n">python</span> <span class="n">get</span><span class="o">-</span><span class="n">pip</span><span class="p">.</span><span class="n">py ...</span></pre></div>
+                        <a class="btn primary xsmall" href="/blog-setup.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        <div class="article">
                 <h1><a href="/go-go-go.html">GO GO GO！</a></h1>
                 <div class="well small"><footer class="post-info">
 <span class="label">Date</span>
@@ -113,11 +164,11 @@
         </div>
         <hr />
         <div class="article">
-                <h1><a href="/Hello-World.html">Hello World</a></h1>
+                <h1><a href="/ti5-wild-card.html">Ti5 外卡赛程序模拟</a></h1>
                 <div class="well small"><footer class="post-info">
 <span class="label">Date</span>
-<abbr class="published" title="2015-08-24T17:21:00+08:00">
-        <i class="icon-calendar"></i>Mon 24 August 2015
+<abbr class="published" title="2015-07-26T00:00:00+08:00">
+        <i class="icon-calendar"></i>Sun 26 July 2015
 </abbr>
 <span class="label">By</span>
 <a href="/author/ben.html"><i class="icon-user"></i>Ben</a>
@@ -126,33 +177,19 @@
 
 
 <span class="label">Tags</span>
-	<a href="/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
-	<a href="/tag/publishing.html"><i class="icon-tag"></i>publishing</a>
+	<a href="/tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="/tag/dota2.html"><i class="icon-tag"></i>dota2</a>
 </footer><!-- /.post-info --></div>
-                <div class="summary"><p>Hello World</p>
-                        <a class="btn primary xsmall" href="/Hello-World.html">more ...</a>
-                </div>
-        </div>
-        <hr />
-        <div class="article">
-                <h1><a href="/my-super-post.html">我的第一个博客！</a></h1>
-                <div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2015-08-24T08:47:00+08:00">
-        <i class="icon-calendar"></i>Mon 24 August 2015
-</abbr>
-<span class="label">By</span>
-<a href="/author/ben.html"><i class="icon-user"></i>Ben</a>
-<span class="label">Category</span>
-<a href="/category/tech.html"><i class="icon-folder-open"></i>Tech</a>.
-
-
-<span class="label">Tags</span>
-	<a href="/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
-	<a href="/tag/publishing.html"><i class="icon-tag"></i>publishing</a>
-</footer><!-- /.post-info --></div>
-                <div class="summary"><p>Short version for index and feeds</p>
-                        <a class="btn primary xsmall" href="/my-super-post.html">more ...</a>
+                <div class="summary"><h2>Ti5 外卡赛</h2>
+<hr />
+<p>前天一时兴起， 想用计算机模拟Ti5外卡赛和正赛来看看最后的结果如何，这样就能完成「 小金本 」的预测~ 现在记录一下一些有趣的东西。</p>
+<p>外卡赛4只队伍CDEC, Vega, MVP 和 Archon, 问题的关键是如何模拟一场比赛的胜负。我最初的想法是查下有没有人研究过每支战队的MMR值与胜率之间的关系， 但是没有找到类似的结论。退而求其次， 我决定用MMR值作为一个基准，然后利用近3个月来战队之间相互战绩进行调整， 具体方案如下：</p>
+<blockquote>
+<p><a href="http://www.joindota.com/en/edb/teams">joindota</a>  使用points值作为战队排名的依据， 同时点
+开每支战队，可以查看近期的对战情况， 打开每场比赛还能看到双方交手胜负，比如Secret 的points 是34779， EG的points是33485， 那么Secret 对 EG的基础胜率就是$\frac{2}{3}$， EG对Secret的胜率则与之相反。 </p>
+<p>然后在<a href="http://www.joindota.com/en/matches/162345-evil-geniuses-vs-teamsecret">joindota_match</a> 这里记录了双方相互战绩为Secret为70%胜率。 </p>
+<p>那么我们最终的胜率定为 winrate["Secret"]["EG"] = alpha * 实际胜率 + (1 - alpha) * 基础胜率 ...</p></blockquote>
+                        <a class="btn primary xsmall" href="/ti5-wild-card.html">more ...</a>
                 </div>
         </div>
         <hr />
@@ -175,6 +212,11 @@
     <li><a href="http://www.zhihu.com/people/zhang-benxuan"><i class="icon-知乎-sign icon-large"></i>知乎</a></li>
 
 <li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="/category/computer.html">
+    <i class="icon-folder-open icon-large"></i>Computer
+</a>
+</li>
 <li>
 <a href="/category/life.html">
     <i class="icon-folder-open icon-large"></i>Life

@@ -47,9 +47,21 @@
     <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
 
     <link href="/" type="application/atom+xml" rel="alternate" title="看不见AC的世界 ATOM Feed" />
+    <!-- Using MathJax, with the delimiters $ -->
+    <!-- Conflict with pygments for the .mo and .mi -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      "HTML-CSS": {
+      styles: {
+      ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+      },
+      tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']],processEscapes: true}
+      });
+    </script>
 
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
   </head>
-
+  
   <body>
 
     <div class="navbar navbar-fixed-top">
@@ -65,6 +77,11 @@
             <ul class="nav">
                 <li><a href="/pages/about-me.html">About Me</a></li>
                           <li class="divider-vertical"></li>
+                  <li >
+                    <a href="/category/computer.html">
+						<i class="icon-folder-open icon-large"></i>Computer
+					</a>
+                  </li>
                   <li >
                     <a href="/category/life.html">
 						<i class="icon-folder-open icon-large"></i>Life
@@ -94,12 +111,12 @@
 <h1>Archives for 看不见AC的世界</h1>
 
 <dl>
+	<dt>Tue 25 August 2015</dt>
+	<dd><a href='blog-setup.html'>我的第一个博客！</a></dd>
 	<dt>Mon 24 August 2015</dt>
 	<dd><a href='go-go-go.html'>GO GO GO！</a></dd>
-	<dt>Mon 24 August 2015</dt>
-	<dd><a href='Hello-World.html'>Hello World</a></dd>
-	<dt>Mon 24 August 2015</dt>
-	<dd><a href='my-super-post.html'>我的第一个博客！</a></dd>
+	<dt>Sun 26 July 2015</dt>
+	<dd><a href='ti5-wild-card.html'>Ti5 外卡赛程序模拟</a></dd>
 </dl>
 </section>
         </div><!--/span-->
@@ -116,6 +133,11 @@
     <li><a href="http://www.zhihu.com/people/zhang-benxuan"><i class="icon-知乎-sign icon-large"></i>知乎</a></li>
 
 <li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="/category/computer.html">
+    <i class="icon-folder-open icon-large"></i>Computer
+</a>
+</li>
 <li>
 <a href="/category/life.html">
     <i class="icon-folder-open icon-large"></i>Life

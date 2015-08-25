@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>看不见AC的世界</title>
+    <title>看不见AC的世界 - dota2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Ben">
@@ -107,11 +107,41 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-<ul>
-	<li><a href="category/computer.html">Computer</a></li>
-	<li><a href="category/life.html">Life</a></li>
-	<li><a href="category/tech.html">tech</a></li>
-</ul>
+        <div class="article">
+                <h1><a href="/ti5-wild-card.html">Ti5 外卡赛程序模拟</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2015-07-26T00:00:00+08:00">
+        <i class="icon-calendar"></i>Sun 26 July 2015
+</abbr>
+<span class="label">By</span>
+<a href="/author/ben.html"><i class="icon-user"></i>Ben</a>
+<span class="label">Category</span>
+<a href="/category/life.html"><i class="icon-folder-open"></i>Life</a>.
+
+
+<span class="label">Tags</span>
+	<a href="/tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="/tag/dota2.html"><i class="icon-tag"></i>dota2</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><h2>Ti5 外卡赛</h2>
+<hr />
+<p>前天一时兴起， 想用计算机模拟Ti5外卡赛和正赛来看看最后的结果如何，这样就能完成「 小金本 」的预测~ 现在记录一下一些有趣的东西。</p>
+<p>外卡赛4只队伍CDEC, Vega, MVP 和 Archon, 问题的关键是如何模拟一场比赛的胜负。我最初的想法是查下有没有人研究过每支战队的MMR值与胜率之间的关系， 但是没有找到类似的结论。退而求其次， 我决定用MMR值作为一个基准，然后利用近3个月来战队之间相互战绩进行调整， 具体方案如下：</p>
+<blockquote>
+<p><a href="http://www.joindota.com/en/edb/teams">joindota</a>  使用points值作为战队排名的依据， 同时点
+开每支战队，可以查看近期的对战情况， 打开每场比赛还能看到双方交手胜负，比如Secret 的points 是34779， EG的points是33485， 那么Secret 对 EG的基础胜率就是$\frac{2}{3}$， EG对Secret的胜率则与之相反。 </p>
+<p>然后在<a href="http://www.joindota.com/en/matches/162345-evil-geniuses-vs-teamsecret">joindota_match</a> 这里记录了双方相互战绩为Secret为70%胜率。 </p>
+<p>那么我们最终的胜率定为 winrate["Secret"]["EG"] = alpha * 实际胜率 + (1 - alpha) * 基础胜率 ...</p></blockquote>
+                        <a class="btn primary xsmall" href="/ti5-wild-card.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+
+                <section id="content" class="body">
+                <h1>Pages</h1>
+                        <li><a href="/pages/about-me.html">About Me</a></li>
+                </section>
         </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">
