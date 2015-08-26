@@ -87,11 +87,6 @@
 						<i class="icon-folder-open icon-large"></i>Life
 					</a>
                   </li>
-                  <li >
-                    <a href="/category/tech.html">
-						<i class="icon-folder-open icon-large"></i>tech
-					</a>
-                  </li>
 
                           <ul class="nav pull-right">
                                 <li><a href="/archives.html"><i class="icon-th-list"></i>Archives</a></li>
@@ -203,6 +198,20 @@ markdown的语法参见<a href="http://www.appinn.com/markdown/#code">Markdown�
 <p>安装Cygwin的时候， 可以要勾选python, git, make安装， 不然打开什么都有。 然后类似于Linux下的过程一步一步来就好了。 我遇到的折腾的问题就是路径不对， 因为我的Windows里面装好了python, pip, pelican， 然后在Cygwin里面执行这些指令就会调用windows下的这些程序， 但是这些程序不认Cygwin的路径。。搞了半天， 我把Windows下默认的python的环境变量都删了， 然后一步一步安装就ok了。</p>
 <p>在Windows下写markdown用的是markdownPad2， 用起来很方便， 比linux下的retext好用。不过刚才手贱点了更新， 破解的就没了。。。 之后等别的功能也一起装好了，再来写吧(┬＿┬)</p>
                 </div><!-- /.entry-content -->
+                <div class="comments">
+                <h2>Comments !</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                           var disqus_identifier = "blog-setup.html";
+                           (function() {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = 'http://mihawk2010githubio.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] ||
+                                 document.getElementsByTagName('body')[0]).appendChild(dsq);
+                          })();
+                        </script>
+                </div>
         </article>
 </section>
         </div><!--/span-->
@@ -229,11 +238,6 @@ markdown的语法参见<a href="http://www.appinn.com/markdown/#code">Markdown�
     <i class="icon-folder-open icon-large"></i>Life
 </a>
 </li>
-<li>
-<a href="/category/tech.html">
-    <i class="icon-folder-open icon-large"></i>tech
-</a>
-</li>
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
 
@@ -257,6 +261,15 @@ markdown的语法参见<a href="http://www.appinn.com/markdown/#code">Markdown�
     </div><!--/.fluid-container-->
 
 
+<script type="text/javascript">
+    var disqus_shortname = 'mihawk2010githubio';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 
     <!-- Le javascript -->
     <!-- Placed at the end of the document so the pages load faster -->
