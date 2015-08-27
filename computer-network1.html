@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>看不见AC的世界</title>
+    <title>Computer Networks --- Week1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Ben">
@@ -77,7 +77,7 @@
             <ul class="nav">
                 <li><a href="/pages/about-me.html">About Me</a></li>
                           <li class="divider-vertical"></li>
-                  <li >
+                  <li class="active">
                     <a href="/category/computer.html">
 						<i class="icon-folder-open icon-large"></i>Computer
 					</a>
@@ -103,16 +103,153 @@
       <div class="row">
         <div class="span9" id="content">
 <section id="content">
-<h1>Archives for 看不见AC的世界</h1>
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to Computer Networks --- Week1">
+                                        Computer Networks --- Week1
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2015-08-26T13:18:17+08:00">
+        <i class="icon-calendar"></i>Wed 26 August 2015
+</abbr>
+<span class="label">By</span>
+<a href="/author/ben.html"><i class="icon-user"></i>Ben</a>
+<span class="label">Category</span>
+<a href="/category/computer.html"><i class="icon-folder-open"></i>Computer</a>.
 
-<dl>
-	<dt>Wed 26 August 2015</dt>
-	<dd><a href='computer-network1.html'>Computer Networks --- Week1</a></dd>
-	<dt>Tue 25 August 2015</dt>
-	<dd><a href='blog-setup.html'>我的第一个博客！</a></dd>
-	<dt>Sun 26 July 2015</dt>
-	<dd><a href='ti5-wild-card.html'>Ti5 外卡赛程序模拟</a></dd>
-</dl>
+
+<span class="label">Tags</span>
+	<a href="/tag/network.html"><i class="icon-tag"></i>network</a>
+	<a href="/tag/note.html"><i class="icon-tag"></i>note</a>
+</footer><!-- /.post-info -->                </div>
+                <h2>Week 1 Computer Networks</h2>
+<hr />
+<h3>1-1 Goals and Motivation</h3>
+<hr />
+<blockquote>
+<ul>
+<li>distributed systems(apps)</li>
+<li><strong>Networking(packets)</strong></li>
+<li>communications(signals)</li>
+</ul>
+</blockquote>
+<p><strong>Key Motivation : the knowledge will never outdate</strong></p>
+<hr />
+<h3>1-2 Uses of Networks</h3>
+<hr />
+<blockquote>
+<ul>
+<li>low latency for communication (VoIP) </li>
+<li>More cost effective than dedicated resources per user (Sharing, <strong>Statistical Multiplexing</strong>)</li>
+<li>Content Delivery, effective than one copy per user (Replicas)</li>
+<li>Computer Communication</li>
+<li>Gather sensor data</li>
+<li>"Metcalfe's Law" : </li>
+<li>
+<ol>
+<li>The value of a network of N nodesis proportional to $N^{2}$</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Large netwoks are relatively more valuable than small ones</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3>1-3 Network Components</h3>
+<hr />
+<p>three componets:</p>
+<blockquote>
+<ul>
+<li>node : host, router </li>
+<li>link : full-duplex, half-duplex, simplex </li>
+<li>app  </li>
+<li>exception: wireless link(broadcast) </li>
+</ul>
+</blockquote>
+<p><img alt="alt text" src="img/comnetworks/components.png" /></p>
+<p>Types of Network:</p>
+<p><img alt="alt text" src="img/comnetworks/names.png" /></p>
+<hr />
+<h3>1-4 Socktets</h3>
+<hr />
+<p>Two kinds of network services:</p>
+<blockquote>
+<ul>
+<li>Streams: reliably send a stream of bytes</li>
+<li>Datagrams: unreliably send seperate messages
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3>1-5 Traceroute</h3>
+<hr />
+<p>tracert是windows下cmd自带的一条指令，我们可以利用类似于视频中的指令查询packet传递的路径</p>
+<hr />
+<h3>1-6 Protocal Layers</h3>
+<hr />
+<blockquote>
+<ul>
+<li>protocol and layering is the main structuring method used to divide up network functionality.</li>
+<li>each instance of a protocol talks <strong>virtually</strong> to its <strong>peer</strong> using the protocol</li>
+<li>each instance of a protocol uses only the services of the lower layer</li>
+<li>set of protocols in use is called a <strong>protocol stack</strong></li>
+</ul>
+</blockquote>
+<p>Then follows:</p>
+<blockquote>
+<p>encapsulation is the mechanism used to effect protocol layering</p>
+<ul>
+<li>lower layer wraps higher layer content, adding its own information to make a new message for delivery.</li>
+</ul>
+<p>Demultiplexing is the process of passing incoming message to the protocols that it uses and done with <strong>demultiplexing keys</strong> in the headers</p>
+</blockquote>
+<p>Adv and Disadv</p>
+<blockquote>
+<p>Advantages</p>
+<ul>
+<li>information hiding and reuse</li>
+<li>using information hiding to connect different systems.</li>
+</ul>
+<p>Disadvantages</p>
+<ul>
+<li>adds overhead (but minor for long messages)</li>
+<li>hides information (app might care whether it is running over wired or wireless!)</li>
+</ul>
+</blockquote>
+<p><img alt="alt text" src="img/comnetworks/connect_diff_systems.png" /></p>
+<hr />
+<h2>1-7 Reference Models</h2>
+<hr />
+<p>Two reference models that decide what functionality will be provided for each layer. </p>
+<p><img alt="alt text" src="img/comnetworks/OSI_reference_model.png" /></p>
+<p><img alt="alt text" src="img/comnetworks/internet_refenece_model.png" /></p>
+                </div><!-- /.entry-content -->
+                <div class="comments">
+                <h2>Comments !</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                           var disqus_identifier = "computer-network1.html";
+                           (function() {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = 'http://mihawk2010githubio.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] ||
+                                 document.getElementsByTagName('body')[0]).appendChild(dsq);
+                          })();
+                        </script>
+                </div>
+        </article>
 </section>
         </div><!--/span-->
 
